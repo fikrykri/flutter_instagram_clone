@@ -2,15 +2,13 @@
 
 A new Flutter project.
 
-## Getting Started
+## Screenshot
 
-This project is a starting point for a Flutter application.
+- Splash Screen
+- Login Page
+- Home Page
 
-A few resources to get you started if this is your first Flutter project:
+![image](https://user-images.githubusercontent.com/67889757/101321946-c965ab80-3898-11eb-879d-6368454d72e1.png)
+![image](https://user-images.githubusercontent.com/67889757/101321970-d2567d00-3898-11eb-95a6-0f02568ad4a0.png)
+![image](https://user-images.githubusercontent.com/67889757/101322029-e5694d00-3898-11eb-9001-171cc6fcd43d.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
