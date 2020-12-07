@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clone_instagram_inisiated/insta_home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_clone_instagram_inisiated/insta_list.dart';
 
 class LoginPages extends StatefulWidget {
   @override
@@ -6,7 +9,9 @@ class LoginPages extends StatefulWidget {
 }
 
 class _LoginPagesState extends State<LoginPages> {
-  String dropdownValue = 'Indonesia';
+  String username = "fikry_kri",
+      password = "fikry12345",
+      dropdownValue = "Indonesia";
 
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -148,7 +153,38 @@ class _LoginPagesState extends State<LoginPages> {
                             });
                           },
                           onTap: () {
-                            print('Masuk');
+                            if (usernameController.text != username ||
+                                passwordController.text != password) {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) => CupertinoAlertDialog(
+                                        title: Text(
+                                            "Username atau kata sandi salah"),
+                                        content: Text(
+                                            "Username atau kata sandi yang anda masukan salah. Silahkan coba lagi."),
+                                        actions: [
+                                          CupertinoDialogAction(
+                                            child: Text(
+                                              "Coba lagi",
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            ),
+                                            isDefaultAction: true,
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                          )
+                                        ],
+                                      ),
+                                  barrierColor: Colors.black.withOpacity(0.85),
+                                  barrierDismissible: false);
+                            } else {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => InstaHome(
+                                          username: usernameController.text)));
+                            }
                           },
                           child: Container(
                             width: deviseWidth * .90,
@@ -284,7 +320,7 @@ class _LoginPagesState extends State<LoginPages> {
                       height: 5,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(
+                      padding: EdgeInsets.only(
                         top: 5,
                         bottom: 5,
                       ),
