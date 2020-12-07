@@ -3,12 +3,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_clone_instagram_inisiated/insta_stories.dart';
 
 class InstaList extends StatefulWidget {
+  final String username;
+
+  InstaList({Key key, @required this.username});
   @override
   _InstaListState createState() => _InstaListState();
 }
 
 class _InstaListState extends State<InstaList> {
   bool isPressed = false;
+
   @override
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
@@ -25,33 +29,32 @@ class _InstaListState extends State<InstaList> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 16.0, 8.0, 16.0),
+                  padding: EdgeInsets.fromLTRB(16.0, 16.0, 8.0, 16.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Row(
                         children: <Widget>[
-                          new Container(
+                          Container(
                             height: 40.0,
                             width: 40.0,
-                            decoration: new BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              image: new DecorationImage(
+                              image: DecorationImage(
                                   fit: BoxFit.fill,
-                                  image: new NetworkImage(
-                                      "https://pbs.twimg.com/profile_images/916384996092448768/PF1TSFOE_400x400.jpg")),
+                                  image: AssetImage("assets/images/Iam.jpg")),
                             ),
                           ),
-                          new SizedBox(
+                          SizedBox(
                             width: 10.0,
                           ),
-                          new Text(
-                            "imthpk",
+                          Text(
+                            widget.username,
                             style: TextStyle(fontWeight: FontWeight.bold),
                           )
                         ],
                       ),
-                      new IconButton(
+                      IconButton(
                         icon: Icon(Icons.more_vert),
                         onPressed: null,
                       )
@@ -60,21 +63,21 @@ class _InstaListState extends State<InstaList> {
                 ),
                 Flexible(
                   fit: FlexFit.loose,
-                  child: new Image.network(
-                    "https://images.pexels.com/photos/672657/pexels-photo-672657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                  child: Image.asset(
+                    "assets/images/post.jpg",
                     fit: BoxFit.cover,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(5.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      new Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          new IconButton(
-                            icon: new Icon(isPressed
+                          IconButton(
+                            icon: Icon(isPressed
                                 ? Icons.favorite
                                 : FontAwesomeIcons.heart),
                             color: isPressed ? Colors.red : Colors.black,
@@ -84,53 +87,52 @@ class _InstaListState extends State<InstaList> {
                               });
                             },
                           ),
-                          new SizedBox(
+                          SizedBox(
                             width: 16.0,
                           ),
-                          new Icon(
+                          Icon(
                             FontAwesomeIcons.comment,
                           ),
-                          new SizedBox(
+                          SizedBox(
                             width: 16.0,
                           ),
-                          new Icon(FontAwesomeIcons.paperPlane),
+                          Icon(FontAwesomeIcons.paperPlane),
                         ],
                       ),
-                      new Icon(FontAwesomeIcons.bookmark)
+                      Icon(FontAwesomeIcons.bookmark)
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
-                    "Liked by pawankumar, pk and 528,331 others",
+                    "Disukai oleh siapa_aja dan 500 lainnya",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 8.0),
+                  padding: EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      new Container(
+                      Container(
                         height: 40.0,
                         width: 40.0,
-                        decoration: new BoxDecoration(
+                        decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          image: new DecorationImage(
+                          image: DecorationImage(
                               fit: BoxFit.fill,
-                              image: new NetworkImage(
-                                  "https://pbs.twimg.com/profile_images/916384996092448768/PF1TSFOE_400x400.jpg")),
+                              image: AssetImage("assets/images/Iam.jpg")),
                         ),
                       ),
-                      new SizedBox(
+                      SizedBox(
                         width: 10.0,
                       ),
                       Expanded(
-                        child: new TextField(
-                          decoration: new InputDecoration(
+                        child: TextField(
+                          decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "Add a comment...",
+                            hintText: "Berikan komentar ...",
                           ),
                         ),
                       ),
@@ -138,9 +140,9 @@ class _InstaListState extends State<InstaList> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child:
-                      Text("1 Day Ago", style: TextStyle(color: Colors.grey)),
+                      Text("2 Day Ago", style: TextStyle(color: Colors.grey)),
                 )
               ],
             ),
