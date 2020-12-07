@@ -52,6 +52,7 @@ flutter:
     - assets/images/insta_logo2.png
     - assets/images/facebook.png
     - assets/images/Iam.jpg
+    - assets/images/post.jpg
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
